@@ -370,7 +370,7 @@ article {
 }
 
 .page-container:hover {
-  transform: translateY(-4px) scale(1.02);
+  /* transform: translateY(-4px) scale(1.02); */
 }
 
 .page-container:hover .navbar,
@@ -963,7 +963,7 @@ main {
   border-color: var(--glass-border-hover);
   border-width: 3px;
   box-shadow: var(--glass-shadow-hover), var(--liquid-glow-hover);
-  transform: translateY(-10px) scale(1.08);
+  transform: translateY(-5px) scale(1.03);
   animation: glow 3s ease-in-out infinite;
 }
 
@@ -1064,7 +1064,7 @@ main {
   border-color: var(--glass-border-hover);
   border-width: 3px;
   box-shadow: var(--glass-shadow-hover), var(--liquid-glow-hover);
-  transform: translate(15px, -25px) scale(1.08);
+  transform: translateY(-5px) scale(1.03);
   animation: glow 3s ease-in-out infinite;
 }
 
@@ -1277,7 +1277,7 @@ main {
   border-color: var(--glass-border-hover);
   border-width: 3px;
   box-shadow: var(--glass-shadow-hover), var(--liquid-glow-hover);
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-5px) scale(1.03);
   animation: glow 3s ease-in-out infinite;
 }
 
@@ -1526,11 +1526,19 @@ main {
 }
 
 @keyframes scaleUp {
-  0% { transform: scale(0.5); }
+  0% { transform: scale(0.8); }
   100% { transform: scale(1); }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a {
+  display: block;
+  width: 100%;
+  transition: var(--transition-1);
+}
+
+.project-item > a:hover {
+  transform: translateY(-5px) scale(1.03);
+}
 
 .project-img {
   position: relative;
@@ -1619,7 +1627,7 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
+.project-item > a:hover img { /* transform: scale(1.1); */ }
 
 .project-title,
 .project-category { margin-left: 10px; }
@@ -1673,7 +1681,7 @@ main {
   border-color: var(--glass-border-hover);
   border-width: 3px;
   box-shadow: var(--glass-shadow-hover), var(--liquid-glow-hover);
-  transform: translateY(-10px) scale(1.08);
+  transform: translateY(-5px) scale(1.03);
   animation: glow 3s ease-in-out infinite;
 }
 
@@ -1732,7 +1740,7 @@ main {
   transition: var(--transition-1);
 }
 
-.certification-post-item > a:hover .certification-banner-box img { transform: scale(1.1); }
+.certification-post-item > a:hover .certification-banner-box img { /* transform: scale(1.1); */ }
 
 .certification-content { padding: 15px; }
 
