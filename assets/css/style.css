@@ -1922,21 +1922,18 @@ main {
 
 /* Responsive adjustments */
 @media (max-width: 580px) {
+  /* On mobile, each experience item becomes a simple card. */
   .qualification__data {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px;
+    display: block; /* Override desktop's grid display */
+    padding: 1.25rem 1.5rem;
     background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur-light);
-    -webkit-backdrop-filter: var(--glass-blur-light);
     border-radius: var(--radius-12);
     border: 1px solid var(--glass-border);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     position: relative;
   }
 
+  /* Decorative vertical line on the left of the card */
   .qualification__data::before {
     content: '';
     position: absolute;
@@ -1948,29 +1945,18 @@ main {
     border-radius: 1px;
   }
 
+  /* Hide all direct children of the card by default */
   .qualification__data > div {
-    text-align: left;
-    padding-left: 20px;
-  }
-  
-  .qualification__data > div:nth-child(2) {
     display: none;
   }
 
-  .qualification__title {
-    font-size: var(--fs-5);
-    font-weight: var(--fw-600);
-    margin-bottom: 5px;
-  }
-
-  .qualification__subtitle {
-    font-size: var(--fs-6);
-    margin-bottom: 10px;
-  }
-
-  .qualification__calendar {
-    font-size: var(--fs-7);
-    justify-content: flex-start;
+  /* Smartly find and display ONLY the div that contains content */
+  .qualification__data > div:has(.qualification__title) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns all text content to the left */
+    gap: 0.25rem;
+    padding-left: 20px; /* Indent content from the vertical line */
   }
 }
 
@@ -3344,11 +3330,22 @@ a[href^="#year-link-"] {
   }
 
   .service-item {
-    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-
+  
+  .service-icon-box {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+  }
+  
   .service-icon-box img {
-    width: 40px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .project-list,
@@ -3879,4 +3876,32 @@ a[href^="#year-link-"] {
 .project-img,
 .certification-banner-box {
   height: 220px;
+}
+
+.logo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 20px;
+}
+
+.logo-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--glass-bg);
+  border-radius: var(--radius-12);
+  padding: 15px;
+  height: 80px;
+  transition: var(--transition-2);
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+  background: var(--glass-bg-hover);
+}
+
+.logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
