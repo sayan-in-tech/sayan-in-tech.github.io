@@ -1,5 +1,23 @@
 const fluidCursor = () => {
+  // Device detection
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 991;
+  const isTablet = /iPad|Android/i.test(navigator.userAgent) && window.innerWidth > 767 && window.innerWidth <= 991;
+  const isLaptop = window.innerWidth >= 992 && window.innerWidth <= 1199;
+  const isDesktop = window.innerWidth >= 1200;
+  
+  // Only enable fluid cursor on laptop and desktop devices
+  if (isMobile || isTablet) {
+    console.log('Fluid cursor disabled on mobile/tablet device');
+    return;
+  }
+
   const canvas = document.getElementById('fluid');
+  
+  // Hide canvas on non-laptop devices
+  if (canvas) {
+    canvas.style.display = isLaptop || isDesktop ? 'block' : 'none';
+  }
+  
   resizeCanvas();
 
   //try to adjust settings
@@ -930,6 +948,26 @@ const fluidCursor = () => {
     }
     return false;
   }
+
+  // Add resize event listener for responsive behavior
+  window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || currentWidth <= 991;
+    const isTablet = /iPad|Android/i.test(navigator.userAgent) && currentWidth > 767 && currentWidth <= 991;
+    const isLaptop = currentWidth >= 992 && currentWidth <= 1199;
+    const isDesktop = currentWidth >= 1200;
+    
+    if (canvas) {
+      if (isMobile || isTablet) {
+        canvas.style.display = 'none';
+        console.log('Fluid cursor disabled due to screen size change');
+      } else if (isLaptop || isDesktop) {
+        canvas.style.display = 'block';
+        console.log('Fluid cursor enabled due to screen size change');
+        resizeCanvas();
+      }
+    }
+  });
 
   function updateColors(dt) {
     colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED;
