@@ -3914,3 +3914,27 @@ a[href^="#year-link-"] {
     align-items: flex-start;
   }
 }
+
+@media (max-width: 991px) {
+  article,
+  .sidebar,
+  .content-card,
+  .service-item,
+  .timeline-item,
+  .skills-list,
+  .project-img,
+  .certification-post-item > a,
+  .mapbox,
+  .contact-form,
+  .logo-item {
+    background: var(--eerie-black-2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--jet);
+    box-shadow: none;
+  }
+
+  .sidebar, article {
+    border-radius: 0;
+  }
+}
