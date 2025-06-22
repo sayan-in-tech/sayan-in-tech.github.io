@@ -886,14 +886,12 @@ main {
   box-shadow: var(--glass-shadow), var(--liquid-glow);
 }
 
-.navbar-link.active { 
-  color: var(--orange-yellow-crayola);
-  font-weight: var(--fw-500);
-  transform: translateY(-2px);
+.navbar-link.active {
+  color: var(--light-gray-70);
 }
 
 .navbar-link.active::before {
-  opacity: 0;
+  transform: scaleX(0);
 }
 
 
@@ -3914,5 +3912,29 @@ a[href^="#year-link-"] {
 @media (min-width: 1200px) {
   main {
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 991px) {
+  article,
+  .sidebar,
+  .content-card,
+  .service-item,
+  .timeline-item,
+  .skills-list,
+  .project-img,
+  .certification-post-item > a,
+  .mapbox,
+  .contact-form,
+  .logo-item {
+    background: var(--eerie-black-2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--jet);
+    box-shadow: none;
+  }
+
+  .sidebar, article {
+    border-radius: 0;
   }
 }
