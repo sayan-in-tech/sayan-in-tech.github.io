@@ -5,9 +5,6 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -59,16 +56,26 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    for (let j = 0; j < pages.length; j++) {
-      if (this.innerHTML.toLowerCase() === pages[j].dataset.page) {
-        pages[j].classList.add("active");
-        navigationLinks[j].classList.add("active");
-        window.scrollTo(0, 0);
+    const selectedPage = this.innerHTML.toLowerCase();
+
+    for (let i = 0; i < pages.length; i++) {
+      if (pages[i].dataset.page === selectedPage) {
+        pages[i].classList.add("active");
       } else {
-        pages[j].classList.remove("active");
-        navigationLinks[j].classList.remove("active");
+        pages[i].classList.remove("active");
       }
     }
+
+    for (let i = 0; i < navigationLinks.length; i++) {
+      if (navigationLinks[i].innerHTML.toLowerCase() === selectedPage) {
+        navigationLinks[i].classList.add('active');
+      } else {
+        navigationLinks[i].classList.remove('active');
+      }
+    }
+
+    window.scrollTo(0, 0);
+
     // Contact form popup logic (if on contact page)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
