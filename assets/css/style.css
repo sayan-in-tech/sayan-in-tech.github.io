@@ -779,8 +779,8 @@ main {
 }
 
 .contact-info {
-  max-width: calc(100% - 46px);
-  width: calc(100% - 46px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-title {
@@ -793,6 +793,9 @@ main {
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-info address { font-style: normal; }
