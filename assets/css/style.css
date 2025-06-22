@@ -672,8 +672,6 @@ main {
   margin: 15px 12px;
   margin-bottom: 75px;
   min-width: auto;
-  width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -3401,8 +3399,8 @@ a[href^="#year-link-"] {
 /* Small devices (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   main {
-    margin: 12px 10px;
-    margin-bottom: 80px;
+    padding: 20px;
+    margin: 0 15px 60px;
   }
 
   .sidebar {
@@ -3463,8 +3461,8 @@ a[href^="#year-link-"] {
 /* Medium devices (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   main {
-    margin: 15px 12px;
-    margin-bottom: 80px;
+    padding: 40px 30px;
+    margin: 0 15px 60px;
   }
 
   .sidebar {
@@ -3517,8 +3515,8 @@ a[href^="#year-link-"] {
 /* Large devices (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   main {
-    margin: 15px 12px;
-    margin-bottom: 75px;
+    padding: 40px 30px;
+    margin: 0 15px 60px;
   }
 
   .sidebar {
