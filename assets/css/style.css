@@ -550,7 +550,6 @@ article.active {
   position: relative;
   padding-bottom: 7px;
   margin-bottom: 25px;
-  padding-top: 60px;
 }
 
 .article-title::after {
@@ -3904,4 +3903,16 @@ a[href^="#year-link-"] {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+@media (min-width: 1100px) {
+  main {
+    align-items: flex-start; /* Changed from 'center' to align items to the top */
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    align-items: flex-start;
+  }
 }
