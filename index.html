@@ -73,7 +73,9 @@
 
         <div class="separator"></div>
 
-        <li class="contact-item">
+        <ul class="contacts-list">
+
+          <li class="contact-item">
 
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
@@ -272,15 +274,20 @@
               Loading the data just for you.
             </div>
 
-            <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+            <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js" defer></script>
 
             <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
 
             <script>
-              GitHubCalendar(".calendar", "sayan-in-tech", {
-                global_stats: false,
-                responsive: true,
-                "float-left": false,
+              // Defer GitHub calendar initialization
+              document.addEventListener('DOMContentLoaded', function() {
+                if (typeof GitHubCalendar !== 'undefined') {
+                  GitHubCalendar(".calendar", "sayan-in-tech", {
+                    global_stats: false,
+                    responsive: true,
+                    "float-left": false,
+                  });
+                }
               });
             </script>
 
@@ -1116,14 +1123,24 @@
   <!--
     - custom js link
   -->
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js" defer></script>
 
   <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="assets/js/fluid-cursor.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+  
+  <!-- Load fluid cursor only on desktop/laptop devices -->
+  <script>
+    // Only load fluid cursor on desktop/laptop devices
+    if (window.innerWidth >= 992) {
+      const script = document.createElement('script');
+      script.src = 'assets/js/fluid-cursor.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 
 </html>
