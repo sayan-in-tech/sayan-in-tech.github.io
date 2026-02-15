@@ -1,0 +1,77 @@
+/* ============================================
+   about.css — About Me + Specialty cards
+   ============================================ */
+
+.about-text {
+  max-width: 680px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ----- Specialty cards ----- */
+.specialties-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.specialty-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.specialty-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.specialty-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.specialty-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.specialty-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ----- Tablet+ ----- */
+@media (min-width: 768px) {
+  .specialties-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----- Desktop+ ----- */
+@media (min-width: 1024px) {
+  .specialties-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

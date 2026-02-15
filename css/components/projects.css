@@ -1,0 +1,85 @@
+/* ============================================
+   projects.css — Project cards grid
+   ============================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.project-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  color: var(--text);
+}
+
+.project-thumb {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--card-hue, 220) 45% 92%);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: hsl(var(--card-hue, 220) 40% 55%);
+  user-select: none;
+}
+
+.project-thumb::after {
+  content: attr(data-initial);
+}
+
+.project-info {
+  padding: 1rem 1.25rem;
+}
+
+.project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.project-link-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--transition);
+}
+
+.project-card:hover .project-link-hint {
+  color: var(--accent);
+}
+
+/* ----- Tablet+ ----- */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ----- Desktop+ ----- */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-thumb {
+    height: 180px;
+  }
+}

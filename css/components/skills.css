@@ -1,0 +1,45 @@
+/* ============================================
+   skills.css — Skill groups + pills
+   ============================================ */
+
+.skills-group {
+  margin-bottom: 2rem;
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  transition: all var(--transition);
+  user-select: none;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow);
+}

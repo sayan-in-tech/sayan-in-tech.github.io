@@ -1,0 +1,83 @@
+/* ============================================
+   utilities.css — Skip link, print, reduced motion
+   ============================================ */
+
+/* ----- Skip Link ----- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  color: #fff;
+}
+
+/* ============================================
+   RESPONSIVE — section padding adjustments
+   ============================================ */
+@media (min-width: 768px) {
+  :root {
+    --section-pad: 5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-pad: 6rem 0;
+  }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .nav,
+  .hero-social,
+  .hero-actions,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .section, .section-alt {
+    padding: 1rem 0;
+    background: #fff;
+  }
+
+  a { color: #000; }
+  a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+
+  .project-card,
+  .cert-card,
+  .specialty-card,
+  .education-card {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
