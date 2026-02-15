@@ -1,0 +1,142 @@
+/* ============================================
+   utilities.css — Skip link, scroll reveal, print, reduced motion
+   ============================================ */
+
+/* ---- Skip Link ---- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.75rem;
+  background: #1f2a44;
+  color: #fff;
+  padding: 0.56rem 0.9rem;
+  border-radius: 10px;
+  z-index: 1000;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: top var(--duration-fast) var(--easing-standard);
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+  color: #fff;
+}
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+html.has-js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity var(--duration-slow) var(--easing-emphasized),
+    transform var(--duration-slow) var(--easing-emphasized);
+}
+
+html.has-js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children */
+html.has-js .reveal .stagger {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.5s var(--easing-standard),
+    transform 0.5s var(--easing-standard);
+  transition-delay: calc(var(--i, 0) * 0.03s + 0.08s);
+}
+
+html.has-js .reveal.is-visible .stagger {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .nav,
+  .scroll-progress,
+  .page-transition,
+  .noise-overlay,
+  .cursor-dot,
+  .cursor-ring,
+  .hero-social,
+  .hero-actions,
+  .hero-divider,
+  .hero-parallax,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .section, .section-alt {
+    padding: 1rem 0;
+    background: #fff;
+  }
+
+  .hero { background: #fff; }
+  .hero::before, .hero::after { display: none; }
+
+  .hero-name {
+    -webkit-text-fill-color: #000;
+    color: #000;
+  }
+
+  a { color: #000; }
+  a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+
+  .project-card,
+  .cert-card,
+  .specialty-card,
+  .education-card {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .reveal,
+  .reveal .stagger {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  html.has-js .reveal,
+  html.has-js .reveal .stagger {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .page-transition,
+  .scroll-progress {
+    display: none !important;
+  }
+}

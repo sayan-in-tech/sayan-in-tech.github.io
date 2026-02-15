@@ -1,0 +1,110 @@
+/* ============================================
+  experience.css — Timeline + education
+  ============================================ */
+
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.38rem;
+  top: 0.45rem;
+  bottom: 0.5rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(90, 103, 255, 0.36), rgba(90, 103, 255, 0.08));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.75rem;
+  top: 0.28rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(90, 103, 255, 0.1);
+}
+
+.timeline-content {
+  padding-left: 0.38rem;
+}
+
+.timeline-role {
+  font-family: var(--font-heading);
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.timeline-company {
+  margin-top: 0.2rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.timeline-date {
+  margin-top: 0.12rem;
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+}
+
+.subsection-title-education {
+  margin-top: var(--space-6);
+}
+
+.education-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(8px);
+  padding: var(--space-3);
+  transition:
+    box-shadow var(--duration-base) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard),
+    transform var(--duration-fast) var(--easing-emphasized);
+}
+
+.education-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(90, 103, 255, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.education-school {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.education-degree {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.26rem;
+}
+
+.education-date {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+}

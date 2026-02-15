@@ -1,0 +1,18 @@
+/**
+ * main.css — Single entry point for all styles.
+ *
+ * Each @import corresponds to one component or concern.
+ * Order matters: base first, then components, then overrides.
+ */
+
+@import 'base.css';
+@import 'components/nav.css';
+@import 'components/hero.css';
+@import 'components/about.css';
+@import 'components/experience.css';
+@import 'components/skills.css';
+@import 'components/projects.css';
+@import 'components/certifications.css';
+@import 'components/footer.css';
+@import 'components/effects.css';
+@import 'utilities.css';

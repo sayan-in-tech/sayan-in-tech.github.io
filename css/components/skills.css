@@ -1,0 +1,54 @@
+/* ============================================
+  skills.css — Skills chips
+  ============================================ */
+
+.skills-group {
+  margin-bottom: var(--space-5);
+}
+
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.52rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.42rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  user-select: none;
+  cursor: default;
+  transition:
+    transform var(--duration-fast) var(--easing-emphasized),
+    border-color var(--duration-fast) var(--easing-standard),
+    background-color var(--duration-fast) var(--easing-standard);
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(90, 103, 255, 0.26);
+  background: rgba(90, 103, 255, 0.08);
+}
