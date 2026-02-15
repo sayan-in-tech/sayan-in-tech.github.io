@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="0.5" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="120" x2="540" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5A67FF"/>
+      <stop offset="1" stop-color="#8B7CFF"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C7D2FE"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#0B1024" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="70" r="220" fill="#6366F1" opacity="0.22"/>
+  <circle cx="180" cy="620" r="260" fill="#3B82F6" opacity="0.18"/>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="72" width="1056" height="486" rx="30" fill="#0B132B" fill-opacity="0.72" stroke="#94A3B8" stroke-opacity="0.24"/>
+  </g>
+
+  <g>
+    <circle cx="242" cy="315" r="120" fill="url(#accent)"/>
+    <circle cx="242" cy="315" r="126" stroke="url(#ring)" stroke-width="8"/>
+    <text x="242" y="342" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="96" font-weight="700" fill="#FFFFFF">SG</text>
+  </g>
+
+  <g fill="#E2E8F0" font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="410" y="240" font-size="62" font-weight="800">Sayan Ghosh</text>
+    <text x="410" y="302" font-size="34" font-weight="600" fill="#A5B4FC">AI/ML Engineer · Backend Developer</text>
+    <text x="410" y="362" font-size="27" font-weight="500" fill="#CBD5E1">Building scalable intelligent systems</text>
+    <text x="410" y="402" font-size="27" font-weight="500" fill="#CBD5E1">for real-world impact.</text>
+  </g>
+
+  <g>
+    <rect x="410" y="448" width="340" height="56" rx="28" fill="#5A67FF" fill-opacity="0.2" stroke="#6366F1"/>
+    <text x="580" y="484" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#E0E7FF">sayan-in-tech.me</text>
+  </g>
+</svg>
