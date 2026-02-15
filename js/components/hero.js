@@ -20,13 +20,15 @@ export function renderHero(site, social) {
 
   return `
   <header class="hero" id="hero">
+    <div class="hero-parallax" aria-hidden="true"></div>
     <div class="container hero-inner">
+      <p class="hero-kicker">Portfolio</p>
       <div class="hero-avatar" aria-hidden="true">${site.initials}</div>
       <h1 class="hero-name">${site.name}</h1>
       <p class="hero-title">${site.role}</p>
       <p class="hero-subtitle">${site.tagline}</p>
 
-      <div class="hero-actions">
+      <div class="hero-actions" aria-label="Primary actions">
         <a href="${site.resumeHref}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           ${icon('download', 16)}
           Download CV

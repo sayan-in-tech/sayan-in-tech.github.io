@@ -1,118 +1,110 @@
 /* ============================================
-   experience.css — Timeline + Education card
-   ============================================ */
+  experience.css — Timeline + education
+  ============================================ */
 
 .timeline {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.75rem;
 }
 
-/* Gradient timeline line */
 .timeline::before {
   content: '';
   position: absolute;
-  top: 0.5rem;
-  left: 0.4375rem;
+  left: 0.38rem;
+  top: 0.45rem;
   bottom: 0.5rem;
-  width: 2.5px;
-  background: var(--grad-spectrum);
+  width: 2px;
   border-radius: 2px;
+  background: linear-gradient(180deg, rgba(90, 103, 255, 0.36), rgba(90, 103, 255, 0.08));
 }
 
 .timeline-item {
   position: relative;
-  padding-bottom: 2.5rem;
+  padding-bottom: var(--space-4);
 }
 
 .timeline-item:last-child {
   padding-bottom: 0;
 }
 
-/* Pulsing dot */
-@keyframes dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 2px var(--blue), 0 0 0 5px transparent; }
-  50%      { box-shadow: 0 0 0 2px var(--blue), 0 0 0 8px rgba(59,130,246,0.12); }
-}
-
 .timeline-dot {
   position: absolute;
-  left: -2rem;
-  top: 0.35rem;
-  width: 12px;
-  height: 12px;
+  left: -1.75rem;
+  top: 0.28rem;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: var(--blue);
-  border: 2.5px solid var(--surface);
-  box-shadow: 0 0 0 2px var(--blue);
-  z-index: 1;
-  animation: dot-pulse 3s ease-in-out infinite;
+  background: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(90, 103, 255, 0.1);
 }
 
 .timeline-content {
-  padding-left: 0.5rem;
+  padding-left: 0.38rem;
 }
 
 .timeline-role {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: 1.32;
   letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.3;
-  margin-bottom: 0.2rem;
 }
 
 .timeline-company {
+  margin-top: 0.2rem;
+  color: var(--accent);
   font-size: 0.95rem;
-  color: var(--blue);
   font-weight: 600;
-  margin-bottom: 0.2rem;
 }
 
 .timeline-date {
+  margin-top: 0.12rem;
+  display: inline-block;
   font-size: 0.8rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  color: var(--text-subtle);
 }
 
-/* ---- Education ---- */
+.subsection-title-education {
+  margin-top: var(--space-6);
+}
+
 .education-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(8px);
+  padding: var(--space-3);
   transition:
-    box-shadow var(--duration) var(--ease-out),
-    border-color var(--duration),
-    background var(--duration);
+    box-shadow var(--duration-base) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard),
+    transform var(--duration-fast) var(--easing-emphasized);
 }
 
 .education-card:hover {
-  border-color: transparent;
-  background:
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    var(--grad-cool) border-box;
+  transform: translateY(-2px);
+  border-color: rgba(90, 103, 255, 0.25);
   box-shadow: var(--shadow-md);
 }
 
 .education-school {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.4;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
 }
 
 .education-degree {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.26rem;
 }
 
 .education-date {
   font-size: 0.8rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--text-subtle);
 }

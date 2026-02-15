@@ -36,7 +36,7 @@ export function renderExperience(experience, education) {
           ${timelineItems}
         </div>
 
-        <h3 class="subsection-title" style="margin-top:3rem;">Education</h3>
+        <h3 class="subsection-title subsection-title-education">Education</h3>
         ${eduCards}
       </div>
     </section>`;

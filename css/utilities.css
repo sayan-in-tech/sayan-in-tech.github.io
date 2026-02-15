@@ -6,18 +6,19 @@
 .skip-link {
   position: absolute;
   top: -100%;
-  left: 1rem;
-  background: var(--grad-primary);
+  left: 0.75rem;
+  background: #1f2a44;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
+  padding: 0.56rem 0.9rem;
+  border-radius: 10px;
   z-index: 1000;
-  font-size: 0.875rem;
+  font-size: 0.84rem;
   font-weight: 500;
+  transition: top var(--duration-fast) var(--easing-standard);
 }
 
 .skip-link:focus {
-  top: 1rem;
+  top: 0.75rem;
   color: #fff;
 }
 
@@ -26,10 +27,10 @@
    ============================================ */
 html.has-js .reveal {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(26px);
   transition:
-    opacity 0.9s var(--ease-out),
-    transform 0.9s var(--ease-out);
+    opacity var(--duration-slow) var(--easing-emphasized),
+    transform var(--duration-slow) var(--easing-emphasized);
 }
 
 html.has-js .reveal.is-visible {
@@ -40,11 +41,11 @@ html.has-js .reveal.is-visible {
 /* Stagger children */
 html.has-js .reveal .stagger {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(14px);
   transition:
-    opacity 0.6s var(--ease-out),
-    transform 0.6s var(--ease-out);
-  transition-delay: calc(var(--i, 0) * 0.06s + 0.12s);
+    opacity 0.5s var(--easing-standard),
+    transform 0.5s var(--easing-standard);
+  transition-delay: calc(var(--i, 0) * 0.03s + 0.08s);
 }
 
 html.has-js .reveal.is-visible .stagger {
@@ -57,9 +58,15 @@ html.has-js .reveal.is-visible .stagger {
    ============================================ */
 @media print {
   .nav,
+  .scroll-progress,
+  .page-transition,
+  .noise-overlay,
+  .cursor-dot,
+  .cursor-ring,
   .hero-social,
   .hero-actions,
   .hero-divider,
+  .hero-parallax,
   .skip-link {
     display: none !important;
   }
@@ -115,10 +122,21 @@ html.has-js .reveal.is-visible .stagger {
     scroll-behavior: auto !important;
   }
 
+  html {
+    scroll-behavior: auto !important;
+  }
+
   html.has-js .reveal,
   html.has-js .reveal .stagger {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring,
+  .page-transition,
+  .scroll-progress {
+    display: none !important;
   }
 }

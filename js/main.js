@@ -20,6 +20,7 @@ import { renderProjects }                           from './components/projects.
 import { renderCertifications }                     from './components/certifications.js';
 import { renderFooter }                             from './components/footer.js';
 import { initScrollReveal }                         from './components/scrollReveal.js';
+import { initUiEffects }                            from './components/effects.js';
 
 /* ---- 1. Render ---- */
 
@@ -41,3 +42,4 @@ document.getElementById('app-footer').innerHTML = renderFooter(site, social);
 
 initNav();
 initScrollReveal();
+initUiEffects();

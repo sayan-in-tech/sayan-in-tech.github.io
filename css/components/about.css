@@ -1,94 +1,93 @@
 /* ============================================
-   about.css — About Me + Specialty cards
-   ============================================ */
+  about.css — About + specialties
+  ============================================ */
+
+.about-content {
+  display: grid;
+  gap: var(--space-4);
+}
 
 .about-text {
-  max-width: 680px;
+  max-width: 74ch;
 }
 
 .about-text p {
-  margin-bottom: 1rem;
+  font-size: clamp(1rem, 1.7vw, 1.08rem);
+  line-height: 1.88;
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.8;
+  margin-bottom: var(--space-2);
 }
 
 .about-text p:last-child {
   margin-bottom: 0;
 }
 
-/* ---- Specialty cards ---- */
 .specialties-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gap);
+  gap: var(--space-2);
 }
 
 .specialty-card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-glass);
+  backdrop-filter: blur(8px);
+  padding: var(--space-3);
   transition:
-    box-shadow var(--duration-slow) var(--ease-out),
-    transform var(--duration) var(--ease-out),
-    border-color var(--duration),
-    background var(--duration);
+    transform var(--duration-base) var(--easing-emphasized),
+    border-color var(--duration-fast) var(--easing-standard),
+    box-shadow var(--duration-base) var(--easing-standard);
 }
 
-/* Gradient border effect on hover */
-.specialty-card:hover {
-  border-color: transparent;
-  background:
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    var(--grad-cool) border-box;
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
-  transform: translateY(-4px);
+.specialty-card:hover,
+.specialty-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(90, 103, 255, 0.28);
+  box-shadow: var(--shadow-md);
 }
 
 .specialty-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-sm);
-  background: var(--grad-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  color: var(--blue);
-  transition: transform var(--duration) var(--ease-spring), box-shadow var(--duration);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--space-2);
+  color: var(--accent);
+  background: linear-gradient(145deg, rgba(90, 103, 255, 0.12), rgba(255, 255, 255, 0.7));
+  transition: transform var(--duration-base) var(--easing-emphasized);
 }
 
 .specialty-card:hover .specialty-icon {
-  transform: scale(1.08);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+  transform: translateY(-1px) scale(1.04);
 }
 
 .specialty-name {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.34;
   letter-spacing: -0.02em;
-  margin-bottom: 0.4rem;
   color: var(--text);
+  margin-bottom: 0.25rem;
 }
 
 .specialty-desc {
-  font-size: 0.9rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
-/* ---- Tablet+ ---- */
 @media (min-width: 768px) {
   .specialties-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
   }
 }
 
-/* ---- Desktop+ ---- */
 @media (min-width: 1024px) {
   .specialties-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
