@@ -1,1146 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayan Ghosh &mdash; AI/ML Engineer</title>
+  <meta name="description" content="Portfolio of Sayan Ghosh, a problem solver with expertise in AI, ML, and backend development.">
 
-  <!-- Open Graph (for WhatsApp, Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Sayan Ghosh - Portfolio">
   <meta property="og:description" content="Portfolio of Sayan Ghosh, a problem solver with expertise in AI, ML, and backend development.">
-  <meta property="og:image" content="https://sayan-in-tech.me/assets/images/about-images/meta-preview-image.webp">
   <meta property="og:url" content="https://sayan-in-tech.me/">
   <meta property="og:type" content="website">
 
-  <title>Sayan Ghosh - Portfolio</title>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sayan Ghosh - Portfolio">
+  <meta name="twitter:description" content="Portfolio of Sayan Ghosh, a problem solver with expertise in AI, ML, and backend development.">
 
+  <!-- Favicon (inline SVG data URI so no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%234A6FA5'/><text x='50' y='68' font-size='50' font-family='serif' fill='white' text-anchor='middle'>SG</text></svg>">
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.webp" type="image/webp">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="assets\css\style.css">
-
-  <!--
-    - google font link
-  -->
+  <!-- Google Fonts: DM Serif Display + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sayan Ghosh - Portfolio" />
-  <meta name="twitter:description" content="Portfolio of Sayan Ghosh, a problem solver with expertise in AI, ML, and backend development." />
-  <meta name="twitter:image" content="https://sayan-in-tech.me/assets/images/about-images/meta-preview-image.webp" />
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-    <canvas id="fluid"></canvas>
-    <!--
-      - #HEADER
-    -->
 
-  <!--
-    - #MAIN
-  -->
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <main>
-    <!--
-      - #SIDEBAR
-    -->
+  <!-- ======================== NAVBAR ======================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-brand">Sayan Ghosh</a>
 
-    <aside class="sidebar active" data-sidebar>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
 
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/avatar/avatar.webp" alt="Sayan Ghosh" width="80" style="
-    padding-bottom: 3px;
-    padding-right: 13px;
-    padding-left: 5px;
-">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Sayan Ghosh">Sayan Ghosh</h1>
-
-          <p class="title">Problem Solver</p>
-        </div>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="https://mail.google.com/mail/?view=cm&to=sayan18012004@gmail.com" target="_blank" rel="noopener noreferrer">
- 
-              <address>sayan18012004@gmail.com</address>
-
-              </a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>India</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="http://www.linkedin.com/in/sayan-in-tech/" class="social-link" target="_blank">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-          
-          <li class="social-item">
-            <a href="https://github.com/sayan-in-tech" class="social-link" target="_blank">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-      
-      <div class="separator" style="
-          margin-top: 10px;
-          margin-bottom: 10px;
-      "></div>
-
-      <!-- Resume Download -->
-      <div class="sidebar-info" style="text-align: center;margin-top: 0px;">
-        <div class="sidebar-info" style="text-align: center; margin-top: 20px;">
-          <a href="https://drive.google.com/file/d/1-ivnkO3a4kfjiO0ArJTfxfV5O2j7g8ei/view?usp=drive_link" target="_blank" style="text-decoration: none;">
-            <button style="width: 190px; padding: 10px 20px; font-size: 13px; border: none; cursor: pointer; background-color: rgb(43, 43, 43); color: rgb(255, 153, 0); border-radius: 15px; transition: background-color 0.3s, transform 0.3s, color 0.3s; display: block; text-align: center; transform: scale(1);" onmouseover="this.style.backgroundColor='rgb(255, 153, 0)'; this.style.color='white'; this.style.transform='scale(1.15)';" onmouseout="this.style.backgroundColor='rgb(43, 43, 43)'; this.style.color='rgb(255, 153, 0)'; this.style.transform='scale(1)';">
-              <p class="title" style="margin: 0; color: inherit; font-size:large; font-family: arial;"><b>Download CV</b></p>
-            </button>
-          </a>
-        </div>      
-
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      </ul>
     </div>
-        
-      
+  </nav>
 
-    </aside>
+  <!-- ======================== HERO ======================== -->
+  <header class="hero" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-avatar" aria-hidden="true">SG</div>
+      <h1 class="hero-name">Sayan Ghosh</h1>
+      <p class="hero-title">Problem Solver</p>
+      <p class="hero-subtitle">AI/ML Engineer &middot; Backend Developer &middot; India</p>
 
+      <div class="hero-actions">
+        <a href="https://drive.google.com/file/d/1-ivnkO3a4kfjiO0ArJTfxfV5O2j7g8ei/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <!-- Download icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+        <a href="https://www.credly.com/users/sayan-ghosh.d79c03eb/badges" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          Credly Profile
+        </a>
+      </div>
 
+      <ul class="hero-social">
+        <li>
+          <a href="https://mail.google.com/mail/?view=cm&to=sayan18012004@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Sayan Ghosh">
+            <!-- Mail icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/sayan-in-tech/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <!-- LinkedIn icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/sayan-in-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <!-- GitHub icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
+  <!-- ======================== MAIN ======================== -->
+  <main id="main">
 
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-      <div class="page-container">
-        <!--
-          - #NAVBAR
-        -->
-
-        <article class="about active" data-page="about">
-
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <button class="navbar-link active" data-nav-link>About</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Experience</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Projects</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Certification</button>
-              </li>
-              <!-- <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Contact</button>
-              </li> -->
-            </ul>
-          </nav>
-
-          <header>
-            <h2 class="h2 article-title">About Me</h2>
-          </header>
-
-          <section class="about-text">
-            <p style="font-size: 17px;">
-                I specialize at building scalable, intelligent systems that blend machine learning, backend engineering, and agentic design. From model pipelines to structured decision-making flows, I focus on reliability, clarity, and real-world impact.
-            </p>
-
-            <p style="font-size: 17px;">
-              I keep things lean and production-ready, while others are caught up doing things that are not scalable. I know how to move fast, debug deeply, and design agents that handle complexity without breaking. If you're aiming for systems that think, act, and grow, I am already building them.
-            </p>
-          </section>
-
-
-          <!--
-            - service
-          -->
-
-          <section class="service">
-
-            <h3 class="h3 service-title">What I'm Doing</h3>
-
-            <ul class="service-list">
-
-              <!-- Artificial Intelligence -->
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="assets/images/about-images/ml.webp" alt="Artificial Intelligence" width="80" height="80">
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Artificial Intelligence</h4>
-                  <p class="service-item-text">
-                    CNN, LSTM, GenAI, Transformers, and more.
-                  </p>
-                </div>
-              </li>
-
-              <!-- Agentic AI -->
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="assets/images/about-images/agentic-ai.webp" alt="Agentic AI" width="80" height="80">
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Agentic AI</h4>
-                  <p class="service-item-text">
-                    LangChain, LangGraph, OpenAI and more.
-                  </p>
-                </div>
-              </li>
-
-              <!-- Computer Vision -->
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="assets/images/about-images/cv.webp" alt="Computer Vision" width="80" height="80">
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Computer Vision</h4>
-                  <p class="service-item-text">
-                    Image and Video Processing, Object Detection, and more.
-                  </p>
-                </div>
-              </li>
-
-              <!-- NLP -->
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img src="assets/images/about-images/nlp.webp" alt="Natural Language Processing" width="100" height="80">
-                </div>
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Natural Language Processing</h4>
-                  <p class="service-item-text">
-                    Text Processing, Sentiment Analysis, and more.
-                  </p>
-                </div>
-              </li>
-
-            </ul>
-
-            <!-- GitHub Calendar Integration -->
-
-            <h3 class="h3 service-title github-contributions-title", style=>My GitHub Contributions</h3>
-
-            <!-- Prepare a container for your calendar. -->
-            <div class="calendar">
-              <!-- Loading stuff -->
-              Loading the data just for you.
-            </div>
-
-            <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js" defer></script>
-
-            <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-
-            <script>
-              // Defer GitHub calendar initialization
-              document.addEventListener('DOMContentLoaded', function() {
-                if (typeof GitHubCalendar !== 'undefined') {
-                  GitHubCalendar(".calendar", "sayan-in-tech", {
-                    global_stats: false,
-                    responsive: true,
-                    "float-left": false,
-                  });
-                }
-              });
-            </script>
-
-            <style>
-              .calendar a[href^="#year-link-"] {
-                display: none !important;
-              }
-            </style>
-
-          </section>
-
-          <div class="modal-container" data-modal-container>
-
-            <div class="overlay" data-overlay></div>
-
-            <section class="testimonials-modal">
-
-              <button class="modal-close-btn" data-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
-
-            </section>
-
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I specialize at building scalable, intelligent systems that blend machine learning, backend engineering, and agentic design. From model pipelines to structured decision-making flows, I focus on reliability, clarity, and real-world impact.</p>
+            <p>I keep things lean and production-ready, while others are caught up doing things that are not scalable. I know how to move fast, debug deeply, and design agents that handle complexity without breaking. If you're aiming for systems that think, act, and grow, I am already building them.</p>
           </div>
 
-        </article>
-
-        <!--
-          - #RESUME
-        -->
-
-        <article class="resume" data-page="experience">
-
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <button class="navbar-link active" data-nav-link>About</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Experience</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Projects</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Certification</button>
-              </li>
-              <!-- <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Contact</button>
-              </li> -->
-            </ul>
-          </nav>
-
-          <header>
-            <h2 class="h2 article-title">Experience</h2>
-          </header>
-
-          <section class="timeline">
-
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="briefcase-outline"></ion-icon>
+          <h3 class="subsection-title">What I Do</h3>
+          <div class="specialties-grid">
+            <div class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true">
+                <!-- Brain / AI icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-1 .5A3.5 3.5 0 0 0 4 11a3.5 3.5 0 0 0 1.5 2.9A4 4 0 0 0 9 18h6a4 4 0 0 0 3.5-4.1A3.5 3.5 0 0 0 20 11a3.5 3.5 0 0 0-3-3.5A4 4 0 0 0 16 7V6a4 4 0 0 0-4-4z"/><path d="M12 2v20"/><path d="M8 10h1"/><path d="M15 10h1"/><path d="M9 14h1"/><path d="M14 14h1"/></svg>
               </div>
-
-              <h3 class="h3">Experience</h3>
+              <h4 class="specialty-name">Artificial Intelligence</h4>
+              <p class="specialty-desc">CNN, LSTM, GenAI, Transformers, and more.</p>
             </div>
-
-            <div class="qualification__container">
-              <div class="qualification__sections">
-                <div class="qualification__content qualification__active" data-content id="work">
-                  <div class="qualification__data">
-                    <div></div>
-                    <div>
-                      <span class="qualification__rounder"></span>
-                      <span class="qualification__line"></span>
-                    </div>
-                    <div>
-                      <h3 class="qualification__title">AI/ML Developer Intern</h3>
-                      <span class="qualification__subtitle">Sereno</span>
-                      <div class="qualification__calendar">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                        August 2025 - September 2025
-                      </div>
-                    </div>
-                  </div>
-                  <div class="qualification__data">
-                    <div>
-                      <h3 class="qualification__title">AI ML Developer Intern</h3>
-                      <span class="qualification__subtitle">Innotrat Labs</span>
-                      <div class="qualification__calendar">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                        May 2025 - June 2025
-                      </div>
-                    </div>
-                    <div>
-                      <span class="qualification__rounder"></span>
-                      <span class="qualification__line"></span>
-                    </div>
-                    <div></div>
-                  </div>
-                  <div class="qualification__data">
-                    <div></div>
-                    <div>
-                      <span class="qualification__rounder"></span>
-                      <span class="qualification__line"></span>
-                    </div>
-                    <div>
-                      <h3 class="qualification__title">AI Intern</h3>
-                      <span class="qualification__subtitle">Infosys</span>
-                      <div class="qualification__calendar">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                        Oct 2024 - Dec 2024
-                      </div>
-                    </div>
-                  </div>
-                  <div class="qualification__data">
-                    <div>
-                      <h3 class="qualification__title">Cloud Virtual Intern</h3>
-                      <span class="qualification__subtitle">AICTE-EduSkills & AWS Academy</span>
-                      <div class="qualification__calendar">
-                        <ion-icon name="calendar-outline"></ion-icon>
-                        Oct 2024 - Dec 2024
-                      </div>
-                    </div>
-                    <div>
-                      <span class="qualification__rounder"></span>
-                      <span class="qualification__line"></span>
-                    </div>
-                    <div></div>
-                  </div>
-                </div>
+            <div class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true">
+                <!-- Agent / bot icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 2v4"/><circle cx="12" cy="7" r="1"/><path d="M8 16h0"/><path d="M16 16h0"/><path d="M9 20v1"/><path d="M15 20v1"/></svg>
               </div>
+              <h4 class="specialty-name">Agentic AI</h4>
+              <p class="specialty-desc">LangChain, LangGraph, OpenAI and more.</p>
             </div>
-          </section>
-
-          <section class="skill">
-
-            <h3 class="h3 service-title" style="font-size: 24px; font-weight: bold; margin-bottom: 15px; margin-left: 15px;">Skills</h3>
-
-            <ul class="skills-list">
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Python</h5>
-                  <data value="95">95%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 95%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">SQL</h5>
-                  <data value="95">90%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">C/C++</h5>
-                  <data value="85">85%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%;"></div>
-                </div>
-
-              </li>
-
-              <li class="skills-item">
-
-                <div class="title-wrapper">
-                  <h5 class="h5">Java</h5>
-                  <data value="90">85%</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%;"></div>
-                </div>
-
-              </li>
-
-            </ul>
-
-          <section class="service" style="margin: 20px;">
-
-            <!-- Frameworks -->
-            <h3 class="h3 service-title">Frameworks</h3>
-
-            <ul class="service-list logo-list">
-
-              <!-- Scikit-learn -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\scikit.webp" alt="Scikit-learn logo">
-              </li>
-
-              <!-- Numpy -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\numpy.webp" alt="Numpy logo">
-              </li>
-
-              <!-- Pandas -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\pandas.webp" alt="Pandas logo">
-              </li>
-
-              <!-- Matplotlib -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\mpl.webp" alt="Matplotlib logo">
-              </li>
-
-              <!-- Pytorch -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\pytorch.webp" alt="Pytorch logo">
-              </li>
-
-              <!-- YOLO -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\yolo.webp" alt="YOLO logo">
-              </li>
-
-              <!-- Tensorflow -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\tf.webp" alt="Tensorflow logo">
-              </li>
-
-              <!-- Keras -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\keras.webp" alt="Keras logo">
-              </li>
-
-              <!-- Streamlit -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\streamlit.webp" alt="Streamlit logo">
-              </li>
-
-              <!-- Flask -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\flask.webp" alt="Flask logo">
-              </li>
-
-              <!-- EasyOCR -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\ocr.webp" alt="EasyOCR logo">
-              </li>
-
-              <!-- OpenCV -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\ocv.webp" alt="OpenCV logo">
-              </li>
-              
-              <!-- FastAPI -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Frameworks\fastapi.webp" alt="FastAPI logo">
-              </li>
-
-            </ul>
-          
-            <!-- Developer Tools -->
-            <h3 class="h3 service-title developer-tools-title">Developer Tools</h3>
-            
-            <ul class="service-list logo-list">
-              
-              <!-- VS Code -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\vs.webp" alt="VS Code logo">
-              </li>
-              
-              <!-- Jupyter Notebook -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\jn.webp" alt="Jupyter Notebook logo">
-              </li>
-              
-              <!-- Git -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\g.webp" alt="Git logo">
-              </li>
-              
-              <!-- Linux -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\linux.webp" alt="Linux logo">
-              </li>
-              
-              <!-- PyCharm -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\p.webp" alt="PyCharm logo">
-              </li>
-              
-              <!-- Intellij -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\ii.webp" alt="Intellij logo">
-              </li>
-              
-              <!-- DataSpell -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\ds.webp" alt="DataSpell logo">
-              </li>
-              
-              <!-- Pytorch -->
-              <li class="service-item logo-item">
-                <img src="assets\images\resume-images\Developer-tools\py.webp" alt="PyTorch logo">
-              </li>
-
-            </ul>
-            
-          </section>
-
-          <section class="timeline">
-
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+            <div class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true">
+                <!-- Eye / vision icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
               </div>
-
-              <h3 class="h3">Education</h3>
+              <h4 class="specialty-name">Computer Vision</h4>
+              <p class="specialty-desc">Image and Video Processing, Object Detection, and more.</p>
             </div>
+            <div class="specialty-card">
+              <div class="specialty-icon" aria-hidden="true">
+                <!-- Text / NLP icon -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h4 class="specialty-name">Natural Language Processing</h4>
+              <p class="specialty-desc">Text Processing, Sentiment Analysis, and more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <ol class="timeline-list">
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
 
-              <li class="timeline-item">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">AI/ML Developer Intern</h3>
+              <p class="timeline-company">Sereno</p>
+              <time class="timeline-date">August 2025 &ndash; September 2025</time>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">AI ML Developer Intern</h3>
+              <p class="timeline-company">Innotrat Labs</p>
+              <time class="timeline-date">May 2025 &ndash; June 2025</time>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">AI Intern</h3>
+              <p class="timeline-company">Infosys</p>
+              <time class="timeline-date">Oct 2024 &ndash; Dec 2024</time>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Cloud Virtual Intern</h3>
+              <p class="timeline-company">AICTE-EduSkills &amp; AWS Academy</p>
+              <time class="timeline-date">Oct 2024 &ndash; Dec 2024</time>
+            </div>
+          </div>
+        </div>
 
-                <h4 class="h4 timeline-item-title">Kalinga Institute of Industrial Technology, Bhubaneswar</h4>
+        <!-- Education -->
+        <h3 class="subsection-title" style="margin-top:3rem;">Education</h3>
+        <div class="education-card">
+          <h4 class="education-school">Kalinga Institute of Industrial Technology, Bhubaneswar</h4>
+          <p class="education-degree">B.Tech in Computer Science and Engineering</p>
+          <time class="education-date">2022 &ndash; 2026</time>
+        </div>
+      </div>
+    </section>
 
-                <span>2022 — 2026</span>
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
 
-                <p class="timeline-text">
-                  B.Tech in Computer Science and Engineering
-                </p>
+        <div class="skills-group">
+          <h3 class="skills-category">Languages</h3>
+          <ul class="pill-list">
+            <li class="pill">Python</li>
+            <li class="pill">SQL</li>
+            <li class="pill">C/C++</li>
+            <li class="pill">Java</li>
+          </ul>
+        </div>
 
-              </li>
+        <div class="skills-group">
+          <h3 class="skills-category">Frameworks &amp; Libraries</h3>
+          <ul class="pill-list">
+            <li class="pill">Scikit-learn</li>
+            <li class="pill">NumPy</li>
+            <li class="pill">Pandas</li>
+            <li class="pill">Matplotlib</li>
+            <li class="pill">PyTorch</li>
+            <li class="pill">YOLO</li>
+            <li class="pill">TensorFlow</li>
+            <li class="pill">Keras</li>
+            <li class="pill">Streamlit</li>
+            <li class="pill">Flask</li>
+            <li class="pill">EasyOCR</li>
+            <li class="pill">OpenCV</li>
+            <li class="pill">FastAPI</li>
+          </ul>
+        </div>
 
+        <div class="skills-group">
+          <h3 class="skills-category">Developer Tools</h3>
+          <ul class="pill-list">
+            <li class="pill">VS Code</li>
+            <li class="pill">Jupyter Notebook</li>
+            <li class="pill">Git</li>
+            <li class="pill">Linux</li>
+            <li class="pill">PyCharm</li>
+            <li class="pill">IntelliJ</li>
+            <li class="pill">DataSpell</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-            </ol>
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
 
-          </section>
-
-
-          <a href="https://www.credly.com/users/sayan-ghosh.d79c03eb/badges" style="text-decoration: none; display: block; margin: 20px;" target="_blank">
-            <button style="width: 100%; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer; background-color: rgb(43, 43, 43); color: white; border-radius: 15px; transition: background-color 0.3s, transform 0.3s, color 0.3s; display: block; text-align: center; transform: scale(1); margin-top: 40px; height: 70px;" 
-                    onmouseover="this.style.backgroundColor='#FCB001'; this.style.color='black'; this.style.transform='scale(1.05)';" 
-                    onmouseout="this.style.backgroundColor='rgb(52, 52, 52)'; this.style.color='white'; this.style.transform='scale(1)';">
-              <h1 style="margin: 0;">Credly Profile</h1>
-            </button>
+          <a href="https://github.com/sayan-in-tech/NeuroTone-A-Vocal-Emotions-Classifier" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="N" style="--card-hue:220"></div>
+            <div class="project-info">
+              <h3 class="project-name">NeuroTone</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
           </a>
 
-        </article>
-
-        <!--
-          - #PORTFOLIO
-        -->
-
-        <article class="portfolio" data-page="projects">
-
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <button class="navbar-link active" data-nav-link>About</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Experience</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Projects</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Certification</button>
-              </li>
-            </ul>
-          </nav>
-
-          <header>
-            <h2 class="h2 article-title">Projects</h2>
-          </header>
-
-          <section class="projects">
-
-            <ul class="project-list">
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/NeuroTone-A-Vocal-Emotions-Classifier" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\NT.webp" alt="NeuroTone" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">NeuroTone</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/FoxxData" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\FD.webp" alt="FoxxData" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">FoxxData</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/MediTrain-Chatbot" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\MT.webp" alt="MediTrain" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">MediTrain</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/CarTagDetect" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\CTD.webp" alt="CarTagDetect" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">CarTagDetect</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/StockSeer" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\SS.webp" alt="StockSeer" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">StockSeer</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/FilmFinder" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\FF.webp" alt="FilmFinder" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">FilmFinder</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/QR-Code-Generator" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\QRG.webp" alt="QR Code Generator Browser Extension" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">QR Browser Extension</h3>
-                </a>
-              </li>
-
-              <li class="project-item active">
-                <a href="https://github.com/sayan-in-tech/ScratchMNIST" target="_blank">
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-
-                    <img src="assets\images\portfolio\NNS.webp" alt="Creating a Neural Network from scratch" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title">Neural Network from scratch</h3>
-                </a>
-              </li>
-            </ul>
-
-          </section>
-
-        </article>
-
-
-
-
-
-        <!--
-          - #Certification
-        -->
-
-        <article class="certification" data-page="certification">
-
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <button class="navbar-link active" data-nav-link>About</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Experience</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Projects</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Certification</button>
-              </li>
-              <!-- <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Contact</button>
-              </li> -->
-            </ul>
-          </nav>
-
-          <header>
-            <h2 class="h2 article-title">Certification</h2>
-          </header>
-
-          <section class="certification-posts">
-
-            <ul class="certification-posts-list">
-
-              <li class="certification-post-item">
-                <a href="https://www.credly.com/badges/637cea12-6e57-42e7-825b-c609882d44f6/public_url" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c8.webp" alt="AWS Academy Cloud Architecting" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Cloud Technology</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">AWS Academy Cloud Architecting</h3>
-
-                  </div>
-
-                </a>
-              </li>
-
-              <li class="certification-post-item">
-                <a href="https://drive.google.com/file/d/1OU0Db-D-W9L4PLwhpLOCmXMIxuUF96EV/view" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c7.webp" alt="Agile Scrum in Practice by Infosys" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Computer Engineering</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">Agile Scrum in Practice by Infosys</h3>
-
-                  </div>
-
-                </a>
-              </li>
-
-              <li class="certification-post-item">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/44F6XBALN95N?utm_campaign=sharing_cta&utm_content=cert_image&utm_medium=certificate&utm_product=s12n&utm_source=link" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c1.webp" alt="Advanced Data Science with IBM" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Data Science</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">Advanced Data Science with IBM</h3>
-
-                  </div>
-
-                </a>
-              </li>
-
-              <li class="certification-post-item">
-                <a href ="https://www.coursera.org/account/accomplishments/professional-cert/42GM2BBDPA9Q?utm_campaign=sharing_cta&utm_content=cert_image&utm_medium=certificate&utm_product=prof&utm_source=link" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c2.webp" alt="Meta Data Analyst" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Data Analysis</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">Meta Data Analyst</h3>
-
-                  </div>
-
-                </a>
-              </li>
-
-              <li class="certification-post-item">
-                <a href="https://www.coursera.org/account/accomplishments/verify/STRBLBLL8RP4?utm_campaign=sharing_cta&utm_content=cert_image&utm_medium=certificate&utm_product=course&utm_source=link" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c3.webp" alt="Applied AI with DeepLearning" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Artificial Intelligence</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">Applied AI with DeepLearning</h3>
-
-                  </div>
-
-                </a>
-              </li>
-              <li class="certification-post-item">
-                <a href="https://www.coursera.org/account/accomplishments/professional-cert/ZK5G36S3VA25" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c4.webp" alt="IBM Full Stack Software Developer" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Software Engineering</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">IBM Full Stack Software Developer</h3>
-
-                  </div>
-
-                </a>
-              </li>
-              <li class="certification-post-item">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/S9WZY43FG3R7" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c5.webp" alt="MLOps | Machine Learning Operations" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Machine Learning</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">MLOps | Machine Learning Operations</h3>
-
-                  </div>
-
-                </a>
-              </li>
-              <li class="certification-post-item">
-                <a href="https://www.coursera.org/account/accomplishments/verify/EN2D6CVAARH7?utm_campaign=sharing_cta&utm_content=cert_image&utm_medium=certificate&utm_product=course&utm_source=link" target="_blank">
-
-                  <figure class="certification-banner-box">
-                    <img src="assets\images\certificate\c6.webp" alt="Advanced ML and Signal Processing" loading="lazy">
-                  </figure>
-
-                  <div class="certification-content">
-
-                    <div class="certification-meta">
-                      <p class="certification-category">Machine Learning</p>
-
-                      <span class="dot"></span>
-
-                      <time datetime="2024">2024</time>
-                    </div>
-
-                    <h3 class="h3 certification-item-title">Advanced ML and Signal Processing</h3>
-
-                  </div>
-
-                </a>
-              </li>
-
-            </ul>
-
-          </section>
-
-        </article>
-
-
-
-
-
-        <!--
-          - #CONTACT
-        -->
-
-        <article class="contact" data-page="contact">
-
-          <nav class="navbar">
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <button class="navbar-link active" data-nav-link>About</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Experience</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Projects</button>
-              </li>
-              <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Certification</button>
-              </li>
-              <!-- <li class="navbar-item">
-                <button class="navbar-link" data-nav-link>Contact</button>
-              </li> -->
-            </ul>
-          </nav>
-
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
-
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239487.16523028907!2d85.65563786313494!3d20.300807013798156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1722443465003!5m2!1sen!2sin"
-                width="400" height="300" loading="lazy"></iframe>
-            </figure>
-          </section>
-
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
-
-
-            <form id="contact-form" name="contact" method="POST" netlify>
-              <input type="hidden" name="form-name" value="contact">
-              <div class="input-wrapper">
-                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-                <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-              </div>
-              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-              <button class="form-btn" type="submit" data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-            </form>
-
-            <div class="overlay" id="overlay"></div>
-            <div class="popup" id="popup">
-              <div class="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
-                </svg>
-              </div>
-              <p>Message sent successfully</p>
-              <p>I will get back to you shortly</p>
+          <a href="https://github.com/sayan-in-tech/FoxxData" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="F" style="--card-hue:150"></div>
+            <div class="project-info">
+              <h3 class="project-name">FoxxData</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
             </div>
+          </a>
 
-            <div class="overlay" id="overlay"></div>
-            <div class="popup" id="popup">
-              <div class="icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
-                </svg>
-              </div>
-              <p>Message sent successfully</p>
+          <a href="https://github.com/sayan-in-tech/MediTrain-Chatbot" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="M" style="--card-hue:0"></div>
+            <div class="project-info">
+              <h3 class="project-name">MediTrain</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
             </div>
+          </a>
 
-          </section>                     
+          <a href="https://github.com/sayan-in-tech/CarTagDetect" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="C" style="--card-hue:40"></div>
+            <div class="project-info">
+              <h3 class="project-name">CarTagDetect</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
 
-        </article>
+          <a href="https://github.com/sayan-in-tech/StockSeer" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="S" style="--card-hue:270"></div>
+            <div class="project-info">
+              <h3 class="project-name">StockSeer</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/sayan-in-tech/FilmFinder" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="F" style="--card-hue:180"></div>
+            <div class="project-info">
+              <h3 class="project-name">FilmFinder</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/sayan-in-tech/QR-Code-Generator" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="Q" style="--card-hue:250"></div>
+            <div class="project-info">
+              <h3 class="project-name">QR Browser Extension</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="https://github.com/sayan-in-tech/ScratchMNIST" target="_blank" rel="noopener noreferrer" class="project-card">
+            <div class="project-thumb" data-initial="N" style="--card-hue:25"></div>
+            <div class="project-info">
+              <h3 class="project-name">Neural Network from Scratch</h3>
+              <span class="project-link-hint">View on GitHub
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certs-grid">
+
+          <a href="https://www.credly.com/badges/637cea12-6e57-42e7-825b-c609882d44f6/public_url" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">AWS Academy Cloud Architecting</h3>
+              <p class="cert-meta">Cloud Technology &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://drive.google.com/file/d/1OU0Db-D-W9L4PLwhpLOCmXMIxuUF96EV/view" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">Agile Scrum in Practice by Infosys</h3>
+              <p class="cert-meta">Computer Engineering &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/specialization/44F6XBALN95N" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">Advanced Data Science with IBM</h3>
+              <p class="cert-meta">Data Science &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/professional-cert/42GM2BBDPA9Q" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">Meta Data Analyst</h3>
+              <p class="cert-meta">Data Analysis &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/verify/STRBLBLL8RP4" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">Applied AI with Deep Learning</h3>
+              <p class="cert-meta">Artificial Intelligence &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/professional-cert/ZK5G36S3VA25" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">IBM Full Stack Software Developer</h3>
+              <p class="cert-meta">Software Engineering &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/specialization/S9WZY43FG3R7" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">MLOps | Machine Learning Operations</h3>
+              <p class="cert-meta">Machine Learning &middot; 2024</p>
+            </div>
+          </a>
+
+          <a href="https://www.coursera.org/account/accomplishments/verify/EN2D6CVAARH7" target="_blank" rel="noopener noreferrer" class="cert-card">
+            <span class="cert-badge" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <div class="cert-info">
+              <h3 class="cert-name">Advanced ML and Signal Processing</h3>
+              <p class="cert-meta">Machine Learning &middot; 2024</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <!--
-    - custom js link
-  -->
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-contact">
+        <p>Get in touch &mdash; <a href="https://mail.google.com/mail/?view=cm&to=sayan18012004@gmail.com" target="_blank" rel="noopener noreferrer">sayan18012004@gmail.com</a></p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/sayan-in-tech/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/sayan-in-tech" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.credly.com/users/sayan-ghosh.d79c03eb/badges" target="_blank" rel="noopener noreferrer">Credly</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Sayan Ghosh</p>
+    </div>
+  </footer>
+
   <script src="assets/js/script.js" defer></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-  
-  <!-- Load fluid cursor only on desktop/laptop devices -->
-  <script>
-    // Only load fluid cursor on desktop/laptop devices
-    if (window.innerWidth >= 992) {
-      const script = document.createElement('script');
-      script.src = 'assets/js/fluid-cursor.js';
-      script.defer = true;
-      document.body.appendChild(script);
-    }
-  </script>
 </body>
-
 </html>

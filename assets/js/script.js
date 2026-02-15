@@ -1,105 +1,65 @@
 'use strict';
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+/* ============================================
+   Mobile nav toggle
+   ============================================ */
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks  = document.querySelector('.nav-links');
 
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-    testimonialsModalFunc();
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    navLinks.classList.toggle('open');
   });
-}
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    });
   });
 }
 
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    const selectedPage = this.innerHTML.toLowerCase();
+/* ============================================
+   Scroll spy — highlight active nav link
+   ============================================ */
+const sections  = document.querySelectorAll('.section[id]');
+const allLinks  = document.querySelectorAll('.nav-link');
 
-    for (let i = 0; i < pages.length; i++) {
-      if (pages[i].dataset.page === selectedPage) {
-        pages[i].classList.add("active");
-      } else {
-        pages[i].classList.remove("active");
-      }
-    }
-
-    for (let i = 0; i < navigationLinks.length; i++) {
-      if (navigationLinks[i].innerHTML.toLowerCase() === selectedPage) {
-        navigationLinks[i].classList.add('active');
-      } else {
-        navigationLinks[i].classList.remove('active');
-      }
-    }
-
-    window.scrollTo(0, 0);
-
-    // Contact form popup logic (if on contact page)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        document.getElementById('overlay').classList.add('show');
-        document.getElementById('popup').classList.add('show');
-        setTimeout(function() {
-          document.getElementById('overlay').classList.remove('show');
-          document.getElementById('popup').classList.remove('show');
-        }, 3000);
-        const formData = new FormData(this);
-        fetch('/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          body: new URLSearchParams(formData).toString()
-        }).then(() => {
-          console.log('Form successfully submitted');
-        }).catch((error) => {
-          console.error('Error submitting form:', error);
+if (sections.length && allLinks.length) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        allLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
         });
-      });
-    }
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -75% 0px',
+    threshold: 0
   });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/* ============================================
+   Sticky nav shadow on scroll
+   ============================================ */
+const nav = document.getElementById('nav');
+
+if (nav) {
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
