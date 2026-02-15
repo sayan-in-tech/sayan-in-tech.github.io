@@ -7,7 +7,7 @@
   position: absolute;
   top: -100%;
   left: 1rem;
-  background: var(--accent);
+  background: var(--grad-primary);
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
@@ -22,14 +22,14 @@
 }
 
 /* ============================================
-   SCROLL REVEAL — only active when JS loads
+   SCROLL REVEAL
    ============================================ */
 html.has-js .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(32px);
   transition:
-    opacity 0.8s var(--ease-out),
-    transform 0.8s var(--ease-out);
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
 }
 
 html.has-js .reveal.is-visible {
@@ -37,14 +37,14 @@ html.has-js .reveal.is-visible {
   transform: none;
 }
 
-/* Stagger support for child items inside revealed sections */
+/* Stagger children */
 html.has-js .reveal .stagger {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(18px);
   transition:
     opacity 0.6s var(--ease-out),
     transform 0.6s var(--ease-out);
-  transition-delay: calc(var(--i, 0) * 0.07s + 0.1s);
+  transition-delay: calc(var(--i, 0) * 0.06s + 0.12s);
 }
 
 html.has-js .reveal.is-visible .stagger {
@@ -59,6 +59,7 @@ html.has-js .reveal.is-visible .stagger {
   .nav,
   .hero-social,
   .hero-actions,
+  .hero-divider,
   .skip-link {
     display: none !important;
   }
@@ -74,6 +75,14 @@ html.has-js .reveal.is-visible .stagger {
     background: #fff;
   }
 
+  .hero { background: #fff; }
+  .hero::before, .hero::after { display: none; }
+
+  .hero-name {
+    -webkit-text-fill-color: #000;
+    color: #000;
+  }
+
   a { color: #000; }
   a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
 
@@ -86,7 +95,6 @@ html.has-js .reveal.is-visible .stagger {
     break-inside: avoid;
   }
 
-  /* Ensure reveal content is visible in print */
   .reveal,
   .reveal .stagger {
     opacity: 1 !important;

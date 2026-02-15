@@ -40,5 +40,6 @@ export function renderHero(site, social) {
         ${socialItems}
       </ul>
     </div>
+    <div class="hero-divider" aria-hidden="true"></div>
   </header>`;
 }

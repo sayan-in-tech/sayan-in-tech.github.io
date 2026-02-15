@@ -3,9 +3,20 @@
    ============================================ */
 
 .footer {
-  border-top: 1px solid var(--border);
-  padding: 3rem 0;
+  position: relative;
+  padding: 3.5rem 0;
   background: var(--surface);
+}
+
+/* Gradient top separator */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--grad-line);
 }
 
 .footer-inner {
@@ -23,7 +34,17 @@
 
 .footer-contact a {
   font-weight: 600;
-  transition: color var(--duration);
+  background: var(--grad-cool);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-contact a:hover {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-links {
@@ -39,13 +60,13 @@
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--blue);
 }
 
 .footer-copy {
   font-size: 0.8rem;
   color: var(--text-secondary);
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 /* ---- Tablet+ ---- */

@@ -11,7 +11,7 @@
 .project-card {
   display: block;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   transition:
@@ -24,10 +24,17 @@
 
 .project-card:hover,
 .project-card:focus-visible {
-  border-color: rgba(99, 102, 241, 0.25);
-  box-shadow: var(--shadow-accent);
-  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15), 0 4px 12px rgba(59, 130, 246, 0.08);
+  transform: translateY(-5px);
   color: var(--text);
+}
+
+/* Gradient border on hover via background trick on the card wrapper */
+.project-card:hover {
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--grad-cool) border-box;
 }
 
 .project-thumb {
@@ -37,14 +44,21 @@
   justify-content: center;
   background: linear-gradient(
     135deg,
-    hsl(var(--card-hue, 220) 50% 95%),
-    hsl(var(--card-hue, 220) 45% 89%)
+    hsl(var(--card-hue, 220) 60% 94%),
+    hsl(var(--card-hue, 220) 55% 85%)
   );
   font-family: var(--font-heading);
-  font-size: 2.75rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: hsl(var(--card-hue, 220) 45% 55%);
+  color: hsl(var(--card-hue, 220) 50% 50%);
   user-select: none;
+  transition: filter var(--duration);
+  /* Reset background so gradient border doesn't bleed into thumb */
+  background-clip: padding-box;
+}
+
+.project-card:hover .project-thumb {
+  filter: brightness(1.05) saturate(1.15);
 }
 
 .project-thumb::after {
@@ -52,12 +66,14 @@
 }
 
 .project-info {
-  padding: 1.15rem 1.25rem;
+  padding: 1.15rem 1.3rem;
+  /* Ensure white background so gradient border trick works cleanly */
+  background: var(--surface);
 }
 
 .project-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.3rem;
@@ -75,7 +91,7 @@
 }
 
 .project-card:hover .project-link-hint {
-  color: var(--accent);
+  color: var(--blue);
 }
 
 /* ---- Tablet+ ---- */
