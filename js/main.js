@@ -2,9 +2,7 @@
  * main.js — Application entry point.
  *
  * Imports all data and components, renders the page,
- * then initialises interactive behaviour.
- *
- * This is the ONLY script loaded by index.html (as type="module").
+ * then initialises interactive behaviour and animations.
  */
 
 import {
@@ -21,6 +19,7 @@ import { renderSkills }                             from './components/skills.js
 import { renderProjects }                           from './components/projects.js';
 import { renderCertifications }                     from './components/certifications.js';
 import { renderFooter }                             from './components/footer.js';
+import { initScrollReveal }                         from './components/scrollReveal.js';
 
 /* ---- 1. Render ---- */
 
@@ -41,3 +40,4 @@ document.getElementById('app-footer').innerHTML = renderFooter(site, social);
 /* ---- 2. Initialise behaviour ---- */
 
 initNav();
+initScrollReveal();

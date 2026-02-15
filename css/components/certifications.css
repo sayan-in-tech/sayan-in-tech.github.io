@@ -15,15 +15,19 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.25rem;
+  padding: 1.35rem;
   color: var(--text);
   text-decoration: none;
-  transition: box-shadow var(--transition), transform var(--transition);
+  transition:
+    box-shadow var(--duration-slow) var(--ease-out),
+    transform var(--duration) var(--ease-out),
+    border-color var(--duration);
 }
 
 .cert-card:hover,
 .cert-card:focus-visible {
-  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   color: var(--text);
 }
@@ -33,7 +37,7 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--bg-alt);
+  background: var(--accent-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,11 +45,14 @@
 }
 
 .cert-name {
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1.35;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
   color: var(--text);
+  transition: color var(--duration);
 }
 
 .cert-meta {
@@ -57,7 +64,7 @@
   color: var(--accent);
 }
 
-/* ----- Tablet+ ----- */
+/* ---- Tablet+ ---- */
 @media (min-width: 768px) {
   .certs-grid {
     grid-template-columns: 1fr 1fr;

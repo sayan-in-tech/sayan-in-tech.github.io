@@ -14,15 +14,19 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: box-shadow var(--transition), transform var(--transition);
+  transition:
+    box-shadow var(--duration-slow) var(--ease-out),
+    transform var(--duration) var(--ease-out),
+    border-color var(--duration);
   color: var(--text);
   text-decoration: none;
 }
 
 .project-card:hover,
 .project-card:focus-visible {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-4px);
   color: var(--text);
 }
 
@@ -31,10 +35,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: hsl(var(--card-hue, 220) 45% 92%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--card-hue, 220) 50% 95%),
+    hsl(var(--card-hue, 220) 45% 89%)
+  );
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  color: hsl(var(--card-hue, 220) 40% 55%);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: hsl(var(--card-hue, 220) 45% 55%);
   user-select: none;
 }
 
@@ -43,13 +52,15 @@
 }
 
 .project-info {
-  padding: 1rem 1.25rem;
+  padding: 1.15rem 1.25rem;
 }
 
 .project-name {
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
   color: var(--text);
 }
 
@@ -59,21 +70,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  transition: color var(--transition);
+  font-weight: 500;
+  transition: color var(--duration);
 }
 
 .project-card:hover .project-link-hint {
   color: var(--accent);
 }
 
-/* ----- Tablet+ ----- */
+/* ---- Tablet+ ---- */
 @media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ----- Desktop+ ----- */
+/* ---- Desktop+ ---- */
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);

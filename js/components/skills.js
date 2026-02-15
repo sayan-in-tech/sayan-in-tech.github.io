@@ -7,8 +7,14 @@
  * @returns {string} HTML
  */
 export function renderSkills(skills) {
+  let pillIndex = 0;
+
   const groups = Object.entries(skills).map(([category, items]) => {
-    const pills = items.map(s => `<li class="pill">${s}</li>`).join('\n              ');
+    const pills = items.map(s => {
+      const html = `<li class="pill stagger" style="--i:${pillIndex}">${s}</li>`;
+      pillIndex++;
+      return html;
+    }).join('\n              ');
 
     return `
         <div class="skills-group">
@@ -20,7 +26,7 @@ export function renderSkills(skills) {
   }).join('');
 
   return `
-    <section class="section" id="skills">
+    <section class="section reveal" id="skills">
       <div class="container">
         <h2 class="section-title">Skills</h2>
         ${groups}

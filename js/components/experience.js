@@ -8,8 +8,8 @@
  * @returns {string} HTML
  */
 export function renderExperience(experience, education) {
-  const timelineItems = experience.map(e => `
-          <div class="timeline-item">
+  const timelineItems = experience.map((e, i) => `
+          <div class="timeline-item stagger" style="--i:${i}">
             <div class="timeline-dot" aria-hidden="true"></div>
             <div class="timeline-content">
               <h3 class="timeline-role">${e.role}</h3>
@@ -28,7 +28,7 @@ export function renderExperience(experience, education) {
   ).join('');
 
   return `
-    <section class="section section-alt" id="experience">
+    <section class="section section-alt reveal" id="experience">
       <div class="container">
         <h2 class="section-title">Experience</h2>
 

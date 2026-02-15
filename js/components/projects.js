@@ -9,8 +9,8 @@ import { icon } from '../icons.js';
  * @returns {string} HTML
  */
 export function renderProjects(projects) {
-  const cards = projects.map(p => `
-          <a href="${p.href}" target="_blank" rel="noopener noreferrer" class="project-card">
+  const cards = projects.map((p, i) => `
+          <a href="${p.href}" target="_blank" rel="noopener noreferrer" class="project-card stagger" style="--i:${i}">
             <div class="project-thumb" data-initial="${p.initial}" style="--card-hue:${p.hue}"></div>
             <div class="project-info">
               <h3 class="project-name">${p.name}</h3>
@@ -22,7 +22,7 @@ export function renderProjects(projects) {
   ).join('');
 
   return `
-    <section class="section section-alt" id="projects">
+    <section class="section section-alt reveal" id="projects">
       <div class="container">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">

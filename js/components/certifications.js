@@ -9,8 +9,8 @@ import { icon } from '../icons.js';
  * @returns {string} HTML
  */
 export function renderCertifications(certs) {
-  const cards = certs.map(c => `
-          <a href="${c.href}" target="_blank" rel="noopener noreferrer" class="cert-card">
+  const cards = certs.map((c, i) => `
+          <a href="${c.href}" target="_blank" rel="noopener noreferrer" class="cert-card stagger" style="--i:${i}">
             <span class="cert-badge" aria-hidden="true">
               ${icon('badge')}
             </span>
@@ -22,7 +22,7 @@ export function renderCertifications(certs) {
   ).join('');
 
   return `
-    <section class="section" id="certifications">
+    <section class="section reveal" id="certifications">
       <div class="container">
         <h2 class="section-title">Certifications</h2>
         <div class="certs-grid">

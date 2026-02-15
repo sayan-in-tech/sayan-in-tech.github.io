@@ -14,8 +14,8 @@ export function renderAbout(paragraphs, specialties) {
     .map(p => `<p>${p}</p>`)
     .join('\n            ');
 
-  const cards = specialties.map(s => `
-          <div class="specialty-card">
+  const cards = specialties.map((s, i) => `
+          <div class="specialty-card stagger" style="--i:${i}">
             <div class="specialty-icon" aria-hidden="true">
               ${icon(s.icon)}
             </div>
@@ -25,7 +25,7 @@ export function renderAbout(paragraphs, specialties) {
   ).join('');
 
   return `
-    <section class="section" id="about">
+    <section class="section reveal" id="about">
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">

@@ -3,7 +3,7 @@
    ============================================ */
 
 .skills-group {
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .skills-group:last-child {
@@ -11,12 +11,13 @@
 }
 
 .skills-category {
-  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .pill-list {
@@ -27,19 +28,22 @@
 
 .pill {
   display: inline-block;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.875rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 100px;
-  transition: all var(--transition);
+  border-radius: var(--radius-full);
+  transition: all var(--duration) var(--ease-out);
   user-select: none;
+  cursor: default;
 }
 
 .pill:hover {
   border-color: var(--accent);
   color: var(--accent);
-  box-shadow: var(--shadow);
+  background: var(--accent-subtle);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
