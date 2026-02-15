@@ -26,7 +26,7 @@ export function renderHero(site, social) {
   <header class="hero" id="hero">
     <div class="hero-parallax" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <p class="hero-kicker">Portfolio</p>
+      <p class="hero-kicker", style="color:rgb(0, 0, 0); font-family: 'calibri', serif;"><i><b>Welcome!</b></i></p>
       <div class="hero-avatar">${avatarMarkup}</div>
       <h1 class="hero-name">${site.name}</h1>
       <p class="hero-title">${site.role}</p>

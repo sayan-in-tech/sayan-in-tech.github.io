@@ -13,7 +13,7 @@ export const site = {
   initials: 'SG',
   profileImage: 'assets/bitmoji-avatar.svg',
   role: 'Problem Solver',
-  tagline: 'AI/ML Engineer \u00b7 Backend Developer \u00b7 India',
+  tagline: 'Full Stack Software Engineer \u00b7 AI/ML Developer \u00b7 India',
   email: 'sayan18012004@gmail.com',
   emailHref: 'https://mail.google.com/mail/?view=cm&to=sayan18012004@gmail.com',
   resumeHref: 'https://drive.google.com/file/d/1-ivnkO3a4kfjiO0ArJTfxfV5O2j7g8ei/view?usp=drive_link',
@@ -80,7 +80,7 @@ export const projects = [
 export const certifications = [
   { name: 'AWS Academy Cloud Architecting',    category: 'Cloud Technology',      year: 2024, href: 'https://www.credly.com/badges/637cea12-6e57-42e7-825b-c609882d44f6/public_url' },
   { name: 'Agile Scrum in Practice by Infosys', category: 'Computer Engineering', year: 2024, href: 'https://drive.google.com/file/d/1OU0Db-D-W9L4PLwhpLOCmXMIxuUF96EV/view' },
-  { name: 'Advanced Data Science with IBM',    category: 'Data Science',          year: 2024, href: 'https://www.coursera.org/account/accomplishments/specialization/44F6XBALN95N' },
+  { name: 'Advanced Data Science with IBM',    category: 'Data Science',          year: 2024, href: 'https://drive.google.com/file/d/1B4TH9VtZYGtuqe0TkFxAaAUQJ-67UXv6/view?usp=sharing' },
   { name: 'Meta Data Analyst',                 category: 'Data Analysis',         year: 2024, href: 'https://www.coursera.org/account/accomplishments/professional-cert/42GM2BBDPA9Q' },
   { name: 'Applied AI with Deep Learning',     category: 'Artificial Intelligence', year: 2024, href: 'https://www.coursera.org/account/accomplishments/verify/STRBLBLL8RP4' },
   { name: 'IBM Full Stack Software Developer', category: 'Software Engineering',  year: 2024, href: 'https://www.coursera.org/account/accomplishments/professional-cert/ZK5G36S3VA25' },
