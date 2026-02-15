@@ -11,6 +11,7 @@
 export const site = {
   name: 'Sayan Ghosh',
   initials: 'SG',
+  profileImage: 'assets/bitmoji-avatar.svg',
   role: 'Problem Solver',
   tagline: 'AI/ML Engineer \u00b7 Backend Developer \u00b7 India',
   email: 'sayan18012004@gmail.com',

@@ -5,11 +5,15 @@
 import { icon } from '../icons.js';
 
 /**
- * @param {Object} site   - { name, initials, role, tagline, resumeHref, credlyHref }
+ * @param {Object} site   - { name, initials, profileImage, role, tagline, resumeHref, credlyHref }
  * @param {Array}  social - [{ label, href, icon }]
  * @returns {string} HTML
  */
 export function renderHero(site, social) {
+  const avatarMarkup = site.profileImage
+    ? `<img src="${site.profileImage}" alt="${site.name} avatar" loading="eager" decoding="async">`
+    : `<span aria-hidden="true">${site.initials}</span>`;
+
   const socialItems = social.map(s => `
         <li>
           <a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.label}">
@@ -23,7 +27,7 @@ export function renderHero(site, social) {
     <div class="hero-parallax" aria-hidden="true"></div>
     <div class="container hero-inner">
       <p class="hero-kicker">Portfolio</p>
-      <div class="hero-avatar" aria-hidden="true">${site.initials}</div>
+      <div class="hero-avatar">${avatarMarkup}</div>
       <h1 class="hero-name">${site.name}</h1>
       <p class="hero-title">${site.role}</p>
       <p class="hero-subtitle">${site.tagline}</p>

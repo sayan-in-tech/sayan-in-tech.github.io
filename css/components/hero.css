@@ -92,17 +92,31 @@
   width: 88px;
   height: 88px;
   border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  background: #e9edff;
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.82),
+    0 14px 36px rgba(90, 103, 255, 0.28);
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-avatar span {
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
-  margin-bottom: var(--space-3);
   font-family: var(--font-heading);
   font-size: 1.66rem;
   font-weight: 700;
   color: #fff;
   background: var(--grad-primary);
-  box-shadow:
-    0 0 0 5px rgba(255, 255, 255, 0.82),
-    0 14px 36px rgba(90, 103, 255, 0.28);
 }
 
 .hero-name {
@@ -176,6 +190,9 @@
   .hero-avatar {
     width: 98px;
     height: 98px;
+  }
+
+  .hero-avatar span {
     font-size: 1.82rem;
   }
 }
