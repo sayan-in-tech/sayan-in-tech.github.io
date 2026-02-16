@@ -3,9 +3,100 @@
  */
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+const HELLO_LOADER_SESSION_KEY = 'hello-loader-shown';
+const HELLO_GREETINGS = [
+  'Hello',
+  'Hey',
+  'Hola',
+  'Bonjour',
+  'Hallo',
+  'Ciao',
+  'Namaste',
+  'নমস্কার',
+  'नमस्ते',
+  'こんにちは',
+  '안녕하세요',
+  '你好',
+  'مرحبًا',
+  'வணக்கம்',
+  'నమస్కారం',
+];
+const HELLO_STEP_MS = 210;
+const HELLO_FINAL_HOLD_MS = 680;
+const HELLO_SAFETY_MS = 9000;
 
 function prefersReducedMotion() {
   return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function wait(ms) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, ms);
+  });
+}
+
+function readSessionFlag(key) {
+  try {
+    return window.sessionStorage.getItem(key) === 'true';
+  } catch {
+    return false;
+  }
+}
+
+function writeSessionFlag(key, value) {
+  try {
+    window.sessionStorage.setItem(key, value ? 'true' : 'false');
+  } catch {
+    // Ignore storage errors in restricted browsing modes.
+  }
+}
+
+async function initHelloLoader() {
+  const loader = document.querySelector('.hello-loader');
+  const text = loader?.querySelector('.hello-loader__text');
+  if (!(loader instanceof HTMLElement) || !(text instanceof HTMLElement)) return;
+
+  if (readSessionFlag(HELLO_LOADER_SESSION_KEY)) {
+    loader.remove();
+    return;
+  }
+
+  document.body.classList.add('is-loader-active');
+
+  const finish = () => {
+    loader.classList.add('is-leaving');
+    writeSessionFlag(HELLO_LOADER_SESSION_KEY, true);
+    window.setTimeout(() => {
+      document.body.classList.remove('is-loader-active');
+      loader.remove();
+    }, 420);
+  };
+
+  if (prefersReducedMotion()) {
+    text.textContent = 'Hello';
+    text.classList.add('is-visible');
+    window.setTimeout(finish, 240);
+    return;
+  }
+
+  window.setTimeout(finish, HELLO_SAFETY_MS);
+
+  for (const greeting of HELLO_GREETINGS) {
+    text.classList.remove('is-visible');
+    await wait(40);
+    text.textContent = greeting;
+    requestAnimationFrame(() => text.classList.add('is-visible'));
+    await wait(HELLO_STEP_MS);
+  }
+
+  text.classList.remove('is-visible');
+  await wait(85);
+  text.textContent = "I'm Sayan";
+  loader.classList.add('is-final');
+  requestAnimationFrame(() => text.classList.add('is-visible'));
+  await wait(HELLO_FINAL_HOLD_MS);
+
+  finish();
 }
 
 function initScrollProgress() {
@@ -134,6 +225,7 @@ function initPageTransition() {
 }
 
 export function initUiEffects() {
+  initHelloLoader();
   initPageTransition();
   initScrollProgress();
   initSmoothAnchorScroll();
