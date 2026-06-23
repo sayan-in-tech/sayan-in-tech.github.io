@@ -38,7 +38,7 @@ export const navLinks = [
 ];
 
 export const about = [
-  'I’m Sayan Ghosh, a final-semester engineering student with ~10 months of hands-on experience across Sereno, Innotrat Labs, Infosys, and AICTE. I build production-grade backend and AI systems, including multi-agent RAG pipelines and LLM applications now serving 100,000+ real users.',
+  'I am Sayan Ghosh, a Computer Science and Engineering graduate with experience building production-grade backend and AI systems across enterprise and product-focused environments. ',
   'I enjoy solving hard problems at the intersection of distributed systems and applied AI. Strong in Python, system design, and cloud fundamentals, I care about shipping reliable software that works at scale and learning fast in high-performance environments.',
 ];
 
@@ -51,9 +51,8 @@ export const specialties = [
 
 export const experience = [
   { role: 'AI/ML Developer Intern', company: 'Sereno',                          date: 'August 2025 \u2013 September 2025' },
-  { role: 'AI ML Developer Intern', company: 'Innotrat Labs',                   date: 'May 2025 \u2013 June 2025'        },
+  { role: 'AI/ML Developer Intern', company: 'Innotrat Labs',                   date: 'May 2025 \u2013 June 2025'        },
   { role: 'AI Intern',              company: 'Infosys',                          date: 'Oct 2024 \u2013 Dec 2024'         },
-  { role: 'Cloud Virtual Intern',   company: 'AICTE-EduSkills & AWS Academy',   date: 'Oct 2024 \u2013 Dec 2024'         },
 ];
 
 export const education = [
